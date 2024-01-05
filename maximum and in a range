@@ -1,0 +1,53 @@
+l=list(map(int,input().split()))
+a,b=map(int,input().split())
+m=max(l)
+p=bin(m)
+p=p[2:m]
+
+#print(p)
+m=len(p)
+ppp=len(p)
+l1=[]
+for i in l:
+    k=[]
+    for j in range(m):
+        k.append(0)
+    l1.append(k)
+for i in range(len(l)):
+    p=bin(l[i])
+    p=p[2::]
+    #print(p)
+    p=p[::-1]
+    #print(p)
+    kk=len(p)
+    c=0
+    for j in range(m-1,m-kk-1,-1):
+        l1[i][j]=int(p[c])
+        c+=1
+print(l1)
+for i in range(ppp):
+    c2=0
+    for j in range(len(l)):
+        c2+=l1[j][i]
+        l1[j][i]=c2
+print(l1)
+p=[]
+s=''
+if a==0:
+    o=l1[b]
+    for i in o:
+        if i==b+1:
+            s+='1'
+        else:
+            s+='0'
+else:
+    o=l1[b]
+    o1=l1[a-1]
+    print(o1)
+    print(o)
+    for i in range(len(o)):
+        if b-a==o[i]-o1[i]:
+            s+='1'
+        else:
+            s+='0'
+print(int(s, 2))

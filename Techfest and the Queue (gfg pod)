@@ -1,0 +1,56 @@
+int prime(int n)
+    {
+        if(n<2)return 0;
+        for(int i=2;i<=sqrt(n);i++)
+        {
+            if(n%i==0)return 0;
+        }
+        return 1;
+    }
+	int sumOfPowers(int a, int b)
+	{
+	    // Code here
+	    int c=0;
+	    for(int i=a;i<=b;i++)
+	    {
+	        int x=i,k=0;
+	        while(1)
+	        {
+	            if(prime(x))
+	            {
+	                c++;
+	                break;
+	            }
+	            else if(x%2==0)
+	            {
+	                x=x/2;
+	                c++;
+	            }
+	            else
+	            {
+	                int y=x,ans=0,j=3;
+	                while(j<x/2)
+	                {
+	                    if(prime(x))
+	                    {
+	                        c++;
+	                        ans=1;
+	                        break;
+	                    }
+	                    else
+	                    {
+	                        if(x%j==0)
+	                        {
+	                            x=x/j;
+	                            c++;
+	                        }
+	                        else j++;
+	                    }
+	                }
+	                if(ans==1)break;
+	            }
+	        }
+	        //cout<<i<<" "<<c<<" "<<endl;
+	    }
+	    return c;
+	}

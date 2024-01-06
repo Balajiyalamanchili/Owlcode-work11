@@ -1,0 +1,8 @@
+n=int(input())
+for i in range(n):
+    a,b=map(int,input().split())
+    c=abs(b-a)
+    if c%2==0:
+        print('Bob')
+    else:
+        print('Alice')

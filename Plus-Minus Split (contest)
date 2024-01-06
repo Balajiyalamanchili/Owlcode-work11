@@ -1,0 +1,11 @@
+n=int(input())
+for i in range(n):
+    a=int(input())
+    k=input()
+    l=[]
+    for i in k:
+        if i=='-':
+            l.append(-1)
+        else:
+            l.append(1)
+    print(abs(sum(l)))

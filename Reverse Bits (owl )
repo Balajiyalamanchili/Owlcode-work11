@@ -1,0 +1,8 @@
+n=int(input())
+k=bin(n)
+k=k[len(k)-1:1:-1]
+#print(k)
+for i in range(0,32-len(k)):
+    k+='0'
+#print(k)
+print(int(k,2))

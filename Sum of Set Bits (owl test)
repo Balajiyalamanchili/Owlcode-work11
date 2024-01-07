@@ -1,0 +1,10 @@
+n=int(input())
+for i in range(n):
+    t=int(input())
+    c=0
+    for p in range(1,t+1):
+        k=bin(p)
+        for j in k:
+            if j=='1':
+                c+=1
+    print(c)

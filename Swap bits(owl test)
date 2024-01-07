@@ -1,0 +1,31 @@
+x,p1,p2,n=map(int,input().split())
+k=bin(x)
+k=k[len(k):1:-1]
+y=p2+n
+if len(k)<y:
+    for i in range(y-len(k)):
+        k+='0'
+#print(k)
+l=k[p1:p1+n]
+r=k[p2:p2+n]
+j=0
+j1=0
+pp=[]
+for i in k:
+    pp.append(i)
+#print(pp)
+for i in range(len(pp)):
+    if i>p1-1 and i<p1+n:
+        pp[i]=r[j]
+        j+=1
+    elif i>p2-1 and i<p2+n:
+        pp[i]=l[j1]
+        j1+=1
+g=''
+#print(pp)
+for i in pp:
+    g+=i
+g=g[::-1]
+print(int(g,2))
+'''print(x)
+print('wewe',p1,p2,n)'''

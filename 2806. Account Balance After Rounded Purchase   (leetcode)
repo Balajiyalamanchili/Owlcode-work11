@@ -1,0 +1,8 @@
+class Solution:
+    def accountBalanceAfterPurchase(self, n: int) -> int:
+        x=(n)%10
+        if x<5:
+            return  100-(n-x)
+        else:
+            return 100-(n+10-x)
+        

@@ -1,0 +1,9 @@
+class Solution:
+    def modifyQueue(self, q, k):
+        # code here
+        l=q[0:k]
+        l.reverse()
+        k=q[k:len(q)]
+        p=l+k
+        q=p
+        return p

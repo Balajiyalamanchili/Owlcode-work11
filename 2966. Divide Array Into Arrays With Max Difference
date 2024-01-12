@@ -1,0 +1,17 @@
+class Solution:
+    def divideArray(self, n: List[int], k: int) -> List[List[int]]:
+        n.sort()
+        l=[]
+        ans=0
+        for i in range(0,len(n),3):
+            p=n[i:i+3]
+            print(p)
+            if abs(p[0]-p[1])<=k and abs(p[1]-p[2])<=k and abs(p[0]-p[2])<=k:
+                l.append(p)
+            else:
+                ans=1
+                break
+        if ans==1:
+            return []
+        else:
+            return l

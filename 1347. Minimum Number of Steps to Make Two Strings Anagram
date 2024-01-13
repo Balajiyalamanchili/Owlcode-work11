@@ -1,0 +1,20 @@
+class Solution:
+    def minSteps(self, s: str, t: str) -> int:
+        l=[]
+        ll=[]
+        for i in range(len(s)):
+            l.append(s[i])
+            ll.append(t[i])
+        l1=[]
+        l2=[]
+        c1=0
+        p=set(l)
+        print(p)
+        for i in p:
+            l1.append(l.count(i))
+            l2.append(ll.count(i))
+        print(l1,l2)
+        for i in range(len(l2)):
+            if l2[i]<=l1[i]:
+                c1+=abs(l2[i]-l1[i])
+        return c1

@@ -1,0 +1,15 @@
+class Solution:
+    def repeatedRows(self, arr, m ,n):
+        #code here
+        l1=[]
+        ans=[]
+        for i in range(m):
+            l=arr[i]
+            if arr[i] not in l1:
+                for j in range(i+1,m):
+                    if arr[i]==arr[j]:
+                        ans.append(j)
+                l1.append(arr[i])
+        ans.sort()
+        return ans
+                

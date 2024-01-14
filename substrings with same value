@@ -1,0 +1,12 @@
+
+class Solution:
+    def totalCount(self, n : int, s : str) -> int:
+        # code here
+        k=ord(s[0])
+        l=[]
+        c=0
+        for i in range(n):
+            if ord(s[i])==k:
+                c+=n-i
+        return int(c%(1e9+7))
+                

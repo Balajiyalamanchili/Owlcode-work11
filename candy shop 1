@@ -1,0 +1,8 @@
+class Solution:
+    def candyShop(self, n : int, candies : List[int]) -> int:
+        # code here
+        s=0
+        p=set(candies)
+        for i in p:
+            s+=i
+        return s

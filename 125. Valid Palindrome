@@ -2,7 +2,7 @@ class Solution:
     def isPalindrome(self, s: str) -> bool:
         k=''
         for i in s:
-            if i in 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOOPASDFGHJKLZXCVBNM':
+            if i in 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOOPASDFGHJKLZXCVBNM1234567890':
                 k+=i
         k=k.lower()
         p=k[::-1]

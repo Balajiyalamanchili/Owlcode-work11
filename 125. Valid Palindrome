@@ -1,0 +1,11 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        k=''
+        for i in s:
+            if i in 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOOPASDFGHJKLZXCVBNM':
+                k+=i
+        k=k.lower()
+        p=k[::-1]
+        if k==p:
+            return True
+        return False

@@ -1,0 +1,18 @@
+class Solution:
+    def fact(self,a,b):
+        nums=1
+        for i in range(a-b+1,a+1):
+            nums*=i
+        for i in range(2,b+1):
+            nums//=i
+        return nums
+    def climbStairs(self, n: int) -> int:
+        k=n//2
+        s=0
+        for i in range(0,k+1):
+            b=i
+            a=n-b*2
+            c=a+b
+            p=self.fact(c,a)
+            s+=p
+        return s

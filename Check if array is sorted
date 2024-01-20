@@ -1,0 +1,11 @@
+class Solution:
+    def arraySortedOrNot(self, arr, n):
+        # code here
+        l=[]
+        for i in arr:
+            l.append(i)
+        l.sort()
+        if l==arr:
+            return 1
+        else:
+            return 0

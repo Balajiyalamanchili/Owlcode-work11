@@ -1,0 +1,8 @@
+class Solution:
+    def minimumCost(self, k: List[int]) -> int:
+        m=k[0]
+        l=k[1:len(k)]
+        l.sort()
+        p=l[0]
+        p1=l[1]
+        return m+p+p1

@@ -1,0 +1,15 @@
+def cat_hat(str):
+  ##your code here##
+  ##You need to write complete code this time 
+    c=0
+    h=0
+    for i in range(len(str)-2):
+        k=str[i:i+3]
+        #print(k)
+        if k=='cat':
+            c+=1
+        if k=='hat':
+            h+=1
+    if h==c:
+        return True
+    return False       

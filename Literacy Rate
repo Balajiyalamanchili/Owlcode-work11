@@ -1,0 +1,10 @@
+# cook your dish here
+t=int(input())
+for i in range(t):
+    a,b=map(int,input().split())
+    c=b/a
+    d=int(c*100)
+    if d>=75:
+        print('YES')
+    else:
+        print('NO')

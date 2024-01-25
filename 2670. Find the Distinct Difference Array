@@ -1,0 +1,10 @@
+class Solution:
+    def distinctDifferenceArray(self, nums: List[int]) -> List[int]:
+        l1=[]
+        for i in range(len(nums)):
+            k=nums[:i+1]
+            k1=nums[i+1:]
+            p=set(k)
+            p1=set(k1)
+            l1.append(len(p)-len(p1))
+        return l1

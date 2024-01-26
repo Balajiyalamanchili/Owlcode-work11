@@ -1,0 +1,30 @@
+class Solution:
+    def addToArrayForm(self, num: List[int], k: int) -> List[int]:
+        k1=''
+        c=0
+        for i in num:
+            k1+=str(i)
+            if i!=9:
+                c+=1
+        if c==0:
+            l=[]
+            l.append(1)
+            for i in num:
+                l.append(0)
+            if k==9:
+                l[len(l)-1]=8
+        else:
+            #p=int(k1)+k
+            if len(k1)>4300:
+                o1=k1[0:len(k1)-500]
+                o=k1[len(k1)-500:len(k1)]
+                p=int(o)+k
+                u=o1
+                u+=str(p)
+            else:
+                p=int(k1)+k
+                u=str(p)
+            l=[]
+            for i in u:
+                l.append(int(i))
+        return l

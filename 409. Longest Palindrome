@@ -1,0 +1,27 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> int:
+        l=[]
+        for i in s:
+            l.append(i)
+        k=set(l)
+        l1=[]
+        for i in k:
+            l1.append(l.count(i))
+        l2=[]
+        l3=[]
+        ans=0
+        for i in l1:
+            if i%2==0:
+                l2.append(i)
+            else:
+                if i!=1:
+                    l3.append(i-1)
+                else:
+                    ans=1
+        if ans==1 and len(l3)==0:
+            l3.append(1)
+            return sum(l2)+1
+            print(l3)
+        elif len(l3)==0:
+            return sum(l2)
+        return sum(l2)+sum(l3)+1

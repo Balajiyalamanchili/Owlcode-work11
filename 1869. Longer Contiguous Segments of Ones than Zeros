@@ -1,0 +1,21 @@
+class Solution:
+    def checkZeroOnes(self, s: str) -> bool:
+        l=[]
+        l1=[]
+        c=0
+        c1=0
+        for i in s:
+            if i=='1':
+                c+=1
+                l1.append(c1)
+                c1=0
+            else:
+                c1+=1
+                l.append(c)
+                c=0
+        l.append(c)
+        l1.append(c1)
+        print(l,l1)
+        if max(l)>max(l1):
+            return True
+        return False

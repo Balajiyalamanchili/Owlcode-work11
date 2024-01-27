@@ -1,0 +1,11 @@
+class Solution:
+    def findIntersectionValues(self, k: List[int], k1: List[int]) -> List[int]:
+        c1=0
+        c2=0
+        for i in k:
+            if i in k1:
+                c1+=1
+        for i in k1:
+            if i in k:
+                c2+=1
+        return [c1,c2]

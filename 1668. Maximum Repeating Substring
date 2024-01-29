@@ -1,0 +1,11 @@
+class Solution:
+    def maxRepeating(self, s: str, word: str) -> int:
+        k=word
+        c=0
+        for i in s:
+            if k in s:
+                k+=word
+                c+=1
+            else:
+                break
+        return c

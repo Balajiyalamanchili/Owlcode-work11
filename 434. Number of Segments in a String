@@ -1,0 +1,14 @@
+class Solution:
+    def countSegments(self, s: str) -> int:
+        c=0
+        k=''
+        for i in s:
+            if i==' ' and len(k)!=0:
+                c+=1
+                k=''
+            else:
+                if i!=' ':
+                    k+=i
+        if len(k)!=0:
+            return c+1
+        return c

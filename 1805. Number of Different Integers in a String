@@ -1,0 +1,15 @@
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        k=''
+        l=[]
+        for i in word:
+            if i not in '0123456789':
+                if len(k)!=0 and  int(k) not in l:
+                    l.append(int(k))
+                k=''
+            else:
+                k+=i
+        if len(k)!=0:
+            if int(k) not in l:
+                l.append(int(k))
+        return len(l)

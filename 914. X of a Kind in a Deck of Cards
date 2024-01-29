@@ -1,0 +1,36 @@
+class Solution:
+    def hasGroupsSizeX(self, deck: List[int]) -> bool:
+        d={}
+        for i in deck:
+            if i not in d:
+                d[i]=1
+            else:
+                d[i]+=1
+        l=[]
+        for i in d:
+            l.append(d[i])
+        print(l)
+        if len(l)<=1 and l[0]<=1:
+            return False
+        p=min(l)
+        ans=1
+        ans1=1
+        ans2=1
+        ans3=1
+        for i in l:
+            if i%2!=0:
+                ans=0
+            if i%3!=0:
+                ans1=0
+            if i%5!=0:
+                ans3=0
+        for i in range(len(l)-1):
+            if l[i]!=l[i+1]:
+                ans2=0
+        if ans==1 or ans1==1 or ans2==1 or ans3==1:
+            return True
+        return False
+        '''for i in range(len(l)-1):
+            if l[i]!=l[i+1]:
+                return False'''
+        #return True

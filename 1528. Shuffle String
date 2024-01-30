@@ -1,0 +1,7 @@
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        s1=''
+        for i in range(len(s)):
+            k=indices.index(i)
+            s1+=s[k]
+        return s1

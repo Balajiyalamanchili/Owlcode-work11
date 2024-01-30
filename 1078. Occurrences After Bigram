@@ -1,0 +1,17 @@
+class Solution:
+    def findOcurrences(self, text: str, first: str, second: str) -> List[str]:
+        l=[]
+        k=''
+        for i in text:
+            if i==' ':
+                l.append(k)
+                k=''
+            else:
+                k+=i
+        if len(k)!=0:
+            l.append(k)
+        l1=[]
+        for i in range(len(l)-2):
+            if l[i]==first and l[i+1]==second:
+                l1.append(l[i+2])
+        return l1

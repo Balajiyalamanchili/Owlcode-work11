@@ -5,3 +5,12 @@ class Solution:
             k=indices.index(i)
             s1+=s[k]
         return s1
+        #-----------------------------------------OR OR OR OR -------------------------------
+        d={}
+        for i in range(len(s)):
+            d[indices[i]]=s[i]
+        #return d
+        s1=''
+        for i in range(len(s)):
+            s1+=d[i]
+        return s1

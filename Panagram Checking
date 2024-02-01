@@ -1,0 +1,11 @@
+class Solution:
+    
+    #Function to check if a string is Pangram or not.
+    def checkPangram(self,s):
+        #code here
+        k=s.lower()
+        p='asdfghjkklzxcvbnmqwertyuiop'
+        for i in p:
+            if i not in k:
+                return 0
+        return 1

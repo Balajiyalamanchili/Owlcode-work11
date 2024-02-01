@@ -1,0 +1,15 @@
+class Solution {
+public:
+    double average(vector<int>& s) {
+        sort(s.begin(),s.end());
+        double c=0;
+        int k=size(s);
+        for(int i=1;i<k-1;i++)
+        {
+            //cout<<s[i]<<" ";
+            c+=s[i];
+        }
+        //cout<<c;
+        return c/(k-2);
+    }
+};

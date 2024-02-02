@@ -1,0 +1,14 @@
+class Solution:
+    def minOperations(self, nums: List[int], k: int) -> int:
+        l1=[0]*(k+1)
+        l1[0]=1
+        print(len(l1))
+        c=0
+        nums.reverse()
+        for i in nums:
+            c+=1
+            if i<=k:
+                l1[i]=1
+            if 0 not in l1:
+                break
+        return c

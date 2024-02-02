@@ -1,0 +1,41 @@
+
+class Solution:
+    # your task is to complete this function
+    # function should return an integer
+    def atoi(self,s):
+        # Code here
+        rev=0
+        ans=0
+        c=0
+        for i in s:
+            if i=='-':
+                c+=1
+            elif i=='1':
+                rev=rev*10+1
+            elif i=='2':
+                rev=rev*10+2
+            elif i=='3':
+                rev=rev*10+3
+            elif i=='4':
+                rev=rev*10+4
+            elif i=='5':
+                rev=rev*10+5
+            elif i=='6':
+                rev=rev*10+6
+            elif i=='7':
+                rev=rev*10+7
+            elif i=='8':
+                rev=rev*10+8
+            elif i=='9':
+                rev=rev*10+9
+            elif i=='0':
+                rev=rev*10+0
+            else:
+                return -1
+        if s[0]=='-' and c==1:
+            return -rev
+        elif s[0]!='-' and c>0:
+            return -1
+        elif c>0:
+            return -1
+        return rev

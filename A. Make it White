@@ -1,0 +1,14 @@
+t=int(input())
+for kkk in range(t):
+    n=int(input())
+    l1=[]
+    l=input()
+    for i in range(n):
+        if l[i]=='B':
+            l1.append(i)
+    if len(l1)==0:
+        print(0)
+    elif len(l1)==1:
+        print(1)
+    else:
+        print(l1[len(l1)-1]-l1[0]+1)

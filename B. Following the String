@@ -1,0 +1,11 @@
+t=int(input())
+for kkk in range(t):
+    n=int(input())
+    l1=[-1]*n
+    l=list(map(int,input().split()))
+    s=''
+    for i in l:
+        k=l1.index(i-1)
+        l1[k]=i
+        s+=chr(97+k)
+    print(s)

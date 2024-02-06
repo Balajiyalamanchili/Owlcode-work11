@@ -1,0 +1,25 @@
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        l1=[]
+        for i in strs:
+            p=list(i)
+            p.sort()
+            l1.append(p)
+        k=[]
+        for i in l1:
+            if i not in k:
+                k.append(i)
+        k=list(k)
+        #print(k)
+        f=[]
+        for i in k:
+            g=[index for index, value in enumerate(l1) if value == i]
+            f.append(g)
+        #print(f)
+        ll=[]
+        for i in f:
+            lj=[]
+            for j in i:
+                lj.append(strs[j])
+            ll.append(lj)
+        return ll

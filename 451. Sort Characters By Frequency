@@ -1,0 +1,17 @@
+class Solution:
+    def frequencySort(self, s: str) -> str:
+        d={}
+        for i in s:
+            if i not in d:
+                d[i]=1
+            else:
+                d[i]+=1
+        ll=dict(sorted(d.items(), key=lambda item: item[1]))
+        #h=dict(sorted(d.values()))
+        #print(h)
+        s=''
+        for i in ll:
+            for j in range(d[i]):
+                s+=i
+        s=s[::-1]
+        return s

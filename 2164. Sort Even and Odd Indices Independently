@@ -1,0 +1,21 @@
+class Solution:
+    def sortEvenOdd(self, nums: List[int]) -> List[int]:
+        l=[]
+        l1=[]
+        for i in range(len(nums)):
+            if i%2==0:
+                l.append(nums[i])
+            else:
+                l1.append(nums[i])
+        l1.sort()
+        l1.reverse()
+        l.sort()
+        k=len(l)
+        k1=len(l1)
+        p=[]
+        for i in range(max(k,k1)):
+            if i<k:
+                p.append(l[i])
+            if i<k1:
+                p.append(l1[i])
+        return p

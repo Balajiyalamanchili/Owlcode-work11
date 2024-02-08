@@ -1,0 +1,7 @@
+class Solution:
+    def findDelayedArrivalTime(self, a: int, d: int) -> int:
+        c=a+d
+        if c>23:
+            return c-24
+        else:
+            return c

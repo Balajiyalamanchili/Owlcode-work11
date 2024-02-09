@@ -1,0 +1,19 @@
+class Solution:
+    def mostFrequentEven(self, nums: List[int]) -> int:
+        d={}
+        m=1
+        for i in nums:
+            if i%2==0:
+                if i not in d:
+                    d[i]=1
+                else:
+                    d[i]+=1
+                    if d[i]>m:
+                        m=d[i]
+        l=[]
+        for i in d:
+            if d[i]==m:
+                l.append(i)
+        if len(l)==0:
+            return -1
+        return min(l)

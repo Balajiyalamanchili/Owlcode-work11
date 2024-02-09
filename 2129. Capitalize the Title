@@ -1,0 +1,23 @@
+class Solution:
+    def capitalizeTitle(self, t: str) -> str:
+        k=''
+        l=[]
+        for i in t:
+            if i==' ':
+                l.append(k)
+                k=''
+            else:
+                k+=i
+        l.append(k)
+        k=''
+        for i in l:
+            if len(i)>2:
+                p=i[0]
+                f=i[1:len(i)]
+                k+=p.upper()
+                k+=f.lower()
+            else:
+                k+=i.lower()
+            k+=' '
+        k=k[0:len(k)-1]
+        return k

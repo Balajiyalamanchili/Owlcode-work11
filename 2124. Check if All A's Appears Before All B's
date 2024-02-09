@@ -1,0 +1,12 @@
+class Solution:
+    def checkString(self, s: str) -> bool:
+        c=0
+        c1=0
+        if 'a' in s:
+            c1=1
+        for i in range(len(s)-1):
+            if s[i]!=s[i+1]:
+                c+=1
+        if c>=2 or (s[0]=='b' and c1!=0):
+            return 0
+        return 1

@@ -1,0 +1,9 @@
+class Solution:
+    def defangIPaddr(self, a: str) -> str:
+        k=''
+        for i in a:
+            if i=='.':
+                k+='[.]'
+            else:
+                k+=i
+        return k

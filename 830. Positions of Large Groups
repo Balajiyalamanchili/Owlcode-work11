@@ -1,0 +1,21 @@
+class Solution:
+    def largeGroupPositions(self, s: str) -> List[List[int]]:
+        c=1
+        l=[]
+        for i in range(len(s)-1):
+            if s[i]==s[i+1]:
+                c+=1
+            else:
+                l.append(c)
+                c=1
+        l.append(c)
+        print(l)
+        p=0
+        o=[]
+        for i in l:
+            p+=i
+            if i>=3:
+                j=[p-i,p-1]
+                o.append(j)
+        return o
+                

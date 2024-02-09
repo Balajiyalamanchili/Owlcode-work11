@@ -1,0 +1,14 @@
+class Solution:
+    def countPoints(self, r: str) -> int:
+        d={}
+        for i in range(0,len(r),2):
+            if r[i+1] in '0123456789':
+                if r[i+1] not in d:
+                    d[r[i+1]]=r[i]
+                else:
+                    d[r[i+1]]+=r[i]
+        c=0
+        for i in d:
+            if 'R' in d[i] and 'G' in d[i] and 'B' in d[i]:
+                c+=1
+        return c

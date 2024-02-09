@@ -1,0 +1,16 @@
+class Solution:
+    def balancedStringSplit(self, s: str) -> int:
+        d=0
+        c1=0
+        c=0
+        for i in s:
+            if i=='L':
+                c+=1
+            if i=='R':
+                c1+=1
+            if c==c1:
+                d+=1
+                c=0
+                c1=0
+        return d
+        

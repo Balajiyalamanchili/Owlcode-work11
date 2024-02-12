@@ -1,0 +1,14 @@
+class Solution:
+    def sequence(self, n):
+        # code here
+        p=1
+        s=1
+        z=2
+        mod=1e9+7
+        for i in range(2,n+1):
+            for j in range(i):
+                p*=z
+                z+=1
+            s+=p
+            p=1
+        return s%int(mod)

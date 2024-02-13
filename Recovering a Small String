@@ -1,0 +1,26 @@
+t=int(input())
+for ttt in range(t):
+    n=int(input())
+    r=''
+    if n==78:
+        r+='zzz'
+    elif n>52:
+        c=26
+        p=n%26
+        r+=chr(p+96)
+        r+='zz'
+    elif  n>27:
+        c=26
+        p=n-26
+        c1=p-1
+        c2=1
+        r+=chr(c2+96)
+        r+=chr(c1+96)
+        r+='z'
+    else:
+        c=1
+        b=n-2
+        r+='aa'
+        r+=chr(b+96)
+    print(r)
+        

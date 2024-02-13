@@ -1,0 +1,29 @@
+t=int(input())
+for kkk in range(t):
+    n=int(input())
+    l=list(map(int,input().split()))
+    if len(l)==1:
+        print(0)
+    else:
+        c=0
+        c1=0
+        ans=0
+        for i in l:
+            if i==l[0]:
+                c+=1
+            else:
+                ans=1
+                break
+        l.reverse()
+        for i in l:
+            if i==l[0]:
+                c1+=1
+            else:
+                break
+        if l[0]==l[n-1]:
+            if ans==0:
+                print(0)
+            else:
+                print(n-(c+c1))
+        else:
+            print(n-max(c,c1))

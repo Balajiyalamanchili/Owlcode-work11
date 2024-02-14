@@ -1,0 +1,14 @@
+class Solution:
+    def rearrangeArray(self, nums: List[int]) -> List[int]:
+        l=[]
+        l1=[]
+        l2=[]
+        for i in nums:
+            if i>=0:
+                 l.append(i)
+            else:
+                l1.append(i)
+        for i in range(len(l)):
+            l2.append(l[i])
+            l2.append(l1[i])
+        return l2

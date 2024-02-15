@@ -1,0 +1,9 @@
+class Solution:
+    def stringMatching(self, w: List[str]) -> List[str]:
+        l=[]
+        for i in w:
+            for j in w:
+                if i!=j and (i in j):
+                    l.append(i)
+                    break
+        return l

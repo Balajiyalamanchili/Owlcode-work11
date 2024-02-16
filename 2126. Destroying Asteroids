@@ -1,0 +1,12 @@
+class Solution:
+    def asteroidsDestroyed(self, mass: int, a: List[int]) -> bool:
+        a.sort()
+        k=a[-1]
+        for i in a:
+            if mass>=i:
+                mass+=i
+                if mass>=k:
+                    return True
+            else:
+                return False
+        return True

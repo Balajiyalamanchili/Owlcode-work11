@@ -1,0 +1,49 @@
+class Solution:
+    def minDominoRotations(self, tops: List[int], bottoms: List[int]) -> int:
+        '''d={}
+        d1={}
+        for i in top:
+            if i in d:
+                d[i]+=1
+            else:
+                d[i]=1
+        for i in bottoms:
+            if i in d1:
+                d1[i]+=1
+            else:
+                d1[i]=1'''
+        l=[]
+        for i in range(1,7):
+            t=tops.copy()
+            b=bottoms.copy()
+            c=0
+            ans=0
+            for j in range(len(t)):
+                if t[j]!=i and b[j]==i:
+                    c+=1
+                elif t[j]==i:
+                    continue
+                else:
+                    ans=1
+                    break
+            if ans==0:
+                l.append(c)
+            t=tops.copy()
+            b=bottoms.copy()
+            c=0
+            ans=0
+            for j in range(len(t)):
+                if t[j]==i and b[j]!=i:
+                    c+=1
+                elif b[j]==i:
+                    continue
+                else:
+                    ans=1
+                    break
+            if ans==0:
+                l.append(c)
+        if len(l)==0:
+            return -1
+        return min(l)
+
+            

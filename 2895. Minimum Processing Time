@@ -1,0 +1,12 @@
+class Solution:
+    def minProcessingTime(self, p: List[int], t: List[int]) -> int:
+        t.sort()
+        t.reverse()
+        j=0
+        p.sort()
+        #print(t)
+        l=[]
+        for i in range(0,len(t),4):
+            l.append(p[j]+t[i])
+            j+=1
+        return max(l)

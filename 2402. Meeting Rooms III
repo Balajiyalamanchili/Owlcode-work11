@@ -1,0 +1,35 @@
+class Solution:
+    def mostBooked(self, n: int, m: List[List[int]]) -> int:
+        l=[0]*n
+        h=[0]*n
+        t=0
+        d={}
+        pp=[]
+        for i in m:
+            d[i[0]]=i[1]
+            pp.append(i[0])
+        pp.sort()
+        m=[]
+        for i in pp:
+            oo=[i,d[i]]
+            m.append(oo)
+        for i in m:
+            d=i[1]-i[0]
+            if t<i[0]:
+                t=i[0]
+            if l[0]==0:
+                l[0]=d+t
+                h[0]+=1
+            else:
+                ans=0
+                if t<min(l):
+                    t=min(l)
+                for jj in range(len(l)):
+                    if l[jj]<=t:
+                        ans+=1
+                        if ans==1:
+                            l[jj]=d+t
+                            h[jj]+=1
+                        else:
+                            jj=0
+        return h.index(max(h))

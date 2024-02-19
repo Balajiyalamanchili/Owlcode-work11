@@ -1,0 +1,28 @@
+class Solution:
+    def maxScoreIndices(self, nums: List[int]) -> List[int]:
+        l=[]
+        k=[0,0]
+        l.append(k)
+        c=0
+        c1=0
+        for i in nums:
+            if i==1:
+                c1+=1
+            if i==0:
+                c+=1
+            k=[c,c1]
+            l.append(k)
+        l.append(k)
+        h=[]
+        #print(l)
+        k1=l[len(l)-1]
+        for i in range(len(l)-1):
+            k=l[i]
+            h.append(k[0]+abs(k1[1]-k[1]))
+        #print(h)
+        p=max(h)
+        l1=[]
+        for i in range(len(h)):
+            if h[i]==p:
+                l1.append(i)
+        return l1

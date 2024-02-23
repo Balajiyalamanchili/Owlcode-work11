@@ -1,0 +1,28 @@
+class Solution:
+    def mostCommonWord(self, p: str, banned: List[str]) -> str:
+        p=p.lower()
+        p+=','
+        s=''
+        m=1
+        d={}
+        ans=0
+        for i in p:
+            if i not in 'qwertyuiopasdfghjklzxcvbnm':
+                if s not in banned and ans==1:
+                    print(s)
+                    if s in d:
+                        d[s]+=1
+                        if d[s]>m:
+                            m=d[s]
+                    else:
+                        d[s]=1
+                    s=''
+                    ans=0
+                s=''
+                ans=0
+            else:
+                ans=1
+                s+=i
+        for i in d:
+            if d[i]==m:
+                return i

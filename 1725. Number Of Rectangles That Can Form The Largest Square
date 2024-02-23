@@ -1,0 +1,14 @@
+class Solution:
+    def countGoodRectangles(self, r: List[List[int]]) -> int:
+        d={}
+        m=0
+        for i in r:
+            k=min(i[0],i[1])
+            if k>m:
+                m=k
+            if k in d:
+                d[k]+=1
+            else:
+                d[k]=1
+        print(m)
+        return d[m]
